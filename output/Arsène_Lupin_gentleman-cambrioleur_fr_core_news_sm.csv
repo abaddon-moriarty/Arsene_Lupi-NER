@@ -1,0 +1,587 @@
+entity,label,occurence
+Arsène Lupin,PER,252
+Ganimard,PER,81
+Devanne,PER,40
+Monsieur,PER,38
+Daspry,PER,38
+Lupin,PER,35
+Varin,PER,35
+Herlock Sholmès,PER,34
+Rozaine,PER,27
+Louis Lacombe,PER,25
+⁂,MISC,22
+Nelly,LOC,20
+Ah !,MISC,20
+Arsène,PER,20
+M. Andermatt,PER,20
+Velmont,LOC,20
+Danègre,PER,19
+Paris,LOC,18
+Baudru,PER,16
+Floriani,PER,16
+Henriette,PER,15
+Mme Andermatt,PER,15
+Thibermesnil,LOC,15
+Rouen,LOC,13
+Écho de France,MISC,12
+Madame,PER,12
+Ludovic,LOC,12
+Anglais,LOC,12
+Sûreté,PER,11
+Gervaise,LOC,11
+Imbert,MISC,10
+Malaquis,MISC,9
+Dieu,MISC,9
+Victor Danègre,PER,9
+Cahorn,LOC,8
+Dieppe,LOC,8
+Salvator,LOC,8
+M. Dudouis,PER,7
+Victor,PER,7
+M.,PER,6
+Amérique,LOC,6
+Dieuzy,PER,6
+Collier de la Reine,PER,6
+M. de Dreux,PER,6
+Jean Daspry,PER,6
+Andermatt,PER,6
+Brawford,LOC,6
+Grimaudan,LOC,6
+Jerland,LOC,5
+Miss Nelly,ORG,5
+miss Nelly,ORG,5
+Watteau,PER,5
+Louis XVI,PER,5
+- Dame !,PER,5
+H-P,PER,5
+Dépôt,LOC,5
+Pierre Onfrey,PER,5
+M. Valorbe,PER,5
+Mme de Dreux,PER,5
+Combien,PER,5
+Alfred Varin,PER,5
+Monsieur Andermatt,PER,5
+Bibliothèque nationale,ORG,5
+Océan,LOC,4
+Caudebec,LOC,4
+Dudouis,PER,4
+Baudru Désiré,PER,4
+Guillaume Berlat,PER,4
+Renaud,PER,4
+Massol,LOC,4
+Dreux-Soubise,MISC,4
+boulevard Maillot,LOC,4
+Étienne Varin,PER,4
+Monsieur Lupin,PER,4
+perle noire,LOC,4
+Tiens,LOC,4
+Georges Devanne,PER,4
+Henri IV,PER,4
+Reine,PER,3
+Andrézy,PER,3
+Rawson,PER,3
+Rubens,LOC,3
+Veuillez,PER,3
+la Santé,LOC,3
+Réveil,LOC,3
+affaire Cahorn,LOC,3
+Folenfant,PER,3
+Crédit Lyonnais,ORG,3
+Saint-Germain,ORG,3
+Désiré,PER,3
+- Dame,PER,3
+Berlat,PER,3
+Amiens,LOC,3
+Delivet,PER,3
+Mme Renaud,PER,3
+Böhmer,PER,3
+Raoul,PER,3
+Saint-Martin,PER,3
+Antoine,PER,3
+Gil Blas,PER,3
+de France,LOC,3
+frères Varin,PER,3
+État,LOC,3
+Ludovic Imbert,PER,3
+Rente,LOC,3
+Zalti,LOC,3
+comtesse d'Andillot,PER,3
+Mlle de Sinclèves,PER,3
+abbé Gélis,PER,3
+Rollon,PER,3
+Sully,PER,3
+Horace Velmont,PER,3
+Avez,LOC,2
+R,MISC,2
+marquis de Raverdan,PER,2
+Bordeaux,LOC,2
+Provence,LOC,2
+Soudain,LOC,2
+Bernard d'Andrézy,PER,2
+ARSÈNE LUPIN,MISC,2
+pays de Caux,LOC,2
+Renaissance,PER,2
+Louis XV,PER,2
+Tenez,LOC,2
+croyez,MISC,2
+Excusez,MISC,2
+Hein,MISC,2
+Jules Bouvier,PER,2
+Grand Journal,ORG,2
+rue Saint-Jacques,LOC,2
+rue de la Santé,LOC,2
+prison de la Santé,LOC,2
+M. Bouvier,PER,2
+Mon Dieu,MISC,2
+de la Santé,PER,2
+Ternes,LOC,2
+Seine,LOC,2
+Muette,LOC,2
+Auteuil,LOC,2
+gare Saint-Lazare,LOC,2
+Écoutez,PER,2
+Honoré Massol,PER,2
+Gaston Delivet,PER,2
+Moreau-Lepton,PER,2
+du Nord,LOC,2
+rue Lafontaine,LOC,2
+Havre,LOC,2
+Bassenge,PER,2
+Marie-Antoinette,PER,2
+Jeanne de Valois,PER,2
+Rétaux de Villette,PER,2
+Cardinal,PER,2
+Collier,LOC,2
+Anquety,PER,2
+Palerme,LOC,2
+Maroc,LOC,2
+Neuilly,LOC,2
+Sinon,PER,2
+Impossible,PER,2
+Georges Andermatt,PER,2
+von Lieben,PER,2
+Montmartre,LOC,2
+Villes,LOC,2
+avenue Hoche,LOC,2
+docteur Harel,PER,2
+besogne,LOC,2
+Voyons,LOC,2
+Léontine Zalti,PER,2
+comtesse d',PER,2
+l'Amérique,LOC,2
+Estevan,PER,2
+Chronique,LOC,2
+Androl,LOC,2
+Mademoiselle,MISC,2
+M. Devanne,PER,2
+Sholmès,PER,2
+L,PER,2
+Maurice Leblanc,PER,1
+Pierre Lafitte,PER,1
+Cie,LOC,1
+Exporté de Wikisource,PER,1
+DES,MISC,1
+Madame Imbert,PER,1
+ARRESTATION,ORG,1
+La Provence,LOC,1
+mer immense,LOC,1
+Schormann,PER,1
+Nelly Underdown,PER,1
+Underdown,PER,1
+Chicago,LOC,1
+Parisien,LOC,1
+monsieur R,MISC,1
+Treize,LOC,1
+- M. Rivolta,PER,1
+Italien,LOC,1
+Naïvement,PER,1
+Mes yeux,MISC,1
+Lady Jerland,PER,1
+Mes bijoux,MISC,1
+Rozaine - c'était démontré - se,MISC,1
+Louis Rozaine,PER,1
+Raverdan,LOC,1
+Heures,PER,1
+Impressionnée,PER,1
+Dussé-je,PER,1
+Atlantique,LOC,1
+Appuyé,PER,1
+Italien Rivolta,MISC,1
+Pauvre Rozaine,MISC,1
+Prenez,PER,1
+mon Dieu,MISC,1
+Macédoine,LOC,1
+Bernard,MISC,1
+R.,PER,1
+Serais,LOC,1
+Mes actes,MISC,1
+PRISON,MISC,1
+I,LOC,1
+Jumièges,LOC,1
+Saint-Wandrille,LOC,1
+histoire du,MISC,1
+abbaye de Jumièges,LOC,1
+Agnès Sorel,PER,1
+Charles VII,PER,1
+Nathan Cahorn,LOC,1
+Satan,PER,1
+Bourse,LOC,1
+Jean Goujon,PER,1
+baron Satan,PER,1
+de la Seine,LOC,1
+Prison de la Santé,PER,1
+Philippe de Champaigne,PER,1
+Vos Rubens,PER,1
+Louis XIII,PER,1
+Beauvais,LOC,1
+Jacob,PER,1
+gare des Batignolles,LOC,1
+Hôtel des Ventes,LOC,1
+Directoire,MISC,1
+Barras,PER,1
+Mémoires inédits,MISC,1
+Garat,LOC,1
+Lecteur,PER,1
+Réveil de Caudebec,LOC,1
+Batignolles,ORG,1
+Préparez,PER,1
+ARSÈNE,MISC,1
+barricada,LOC,1
+Onze heures,MISC,1
+Régent !,ORG,1
+Vierge,PER,1
+essayez,PER,1
+Santé !,MISC,1
+regretta,LOC,1
+Quels,PER,1
+Sherlock Holmès,PER,1
+Affaire Cahorn,PER,1
+château du Malaquis,LOC,1
+Seine-Inférieure,LOC,1
+Parlez,PER,1
+Z.,LOC,1
+Supposons,MISC,1
+Ledit,PER,1
+pseudo-Ganimard,MISC,1
+Machinalement Ganimard,PER,1
+Accord,LOC,1
+Comprenez,PER,1
+Mercredi,PER,1
+Pergolèse,LOC,1
+- J. B,PER,1
+ÉVASION,ORG,1
+u,MISC,1
+Sûreté M. Dudouis,PER,1
+le Havane,LOC,1
+Argus,LOC,1
+Presse,MISC,1
+Culte des héros de Carlyle,ORG,1
+Manuel d'Épictète,PER,1
+Leyde,LOC,1
+Henri Clet,PER,1
+Réponse,LOC,1
+Soyez,ORG,1
+horse power,PER,1
+greffe de la Santé,LOC,1
+Danval,PER,1
+Babylone,LOC,1
+Armesnil,LOC,1
+Gouret,LOC,1
+Imblevain,PER,1
+Groseillers,ORG,1
+salade,PER,1
+Horloge,LOC,1
+Palais de Justice,LOC,1
+pont Saint-Michel,LOC,1
+plaque de tôle,LOC,1
+boulevard Saint-Michel,LOC,1
+sauta,LOC,1
+rue Soufflot,LOC,1
+Boulevard de Port-Royal,PER,1
+Soufflot,PER,1
+croyez-m',MISC,1
+Préfet,MISC,1
+Monsieur le Préfet,PER,1
+Avocats,PER,1
+Tout-Paris,LOC,1
+Me Danval,PER,1
+Rostat,MISC,1
+Dickson,PER,1
+hôpital Saint-Louis,LOC,1
+Grand Prix de l'Exposition,MISC,1
+Bazar de la Charité,MISC,1
+l'Europe,LOC,1
+gardiens de la Santé,ORG,1
+Trompés,PER,1
+Désiré Baudru,PER,1
+Courbevoie,LOC,1
+Asnières,LOC,1
+Levallois,LOC,1
+Baudru libre,PER,1
+Châtelet,LOC,1
+rue Saint-Martin,LOC,1
+Batignolles-Jardin des Plantes,LOC,1
+rue de Rivoli,LOC,1
+Galeries-Lafayette,ORG,1
+boulevard Haussmann,LOC,1
+Victor-Hugo,LOC,1
+bois de Boulogne,LOC,1
+Assises,ORG,1
+Orfèvres,MISC,1
+udi-shi-ghi,ORG,1
+Saint-Louis,LOC,1
+Altier,LOC,1
+Joignez,PER,1
+Mes,PER,1
+Logiquement,PER,1
+Bertillon,LOC,1
+exclama Lupin,PER,1
+Hélas !,MISC,1
+Angleterre,LOC,1
+MYSTÉRIEUX,ORG,1
+VOYAGEUR,ORG,1
+Turquie,LOC,1
+Pas-Perdus,LOC,1
+Mes paroles,MISC,1
+police de Rouen,LOC,1
+Saint-Lazare,LOC,1
+Vernon,LOC,1
+Saint-Pierre,LOC,1
+Oissel,LOC,1
+Saint-Étienne,LOC,1
+côte Sainte-Catherine,LOC,1
+mes bijoux,MISC,1
+Racontez,PER,1
+Donnez,PER,1
+Georges Ardelle,PER,1
+Crédit Rouennais,ORG,1
+la Seine,LOC,1
+le Havre,LOC,1
+Attendre,LOC,1
+bicyclette,LOC,1
+gare de Darnétal,LOC,1
+gare du Nord,LOC,1
+écoutez M. Berlat,PER,1
+Modestes soutiens,ORG,1
+Delivet Gaston,PER,1
+Massol Honoré,PER,1
+Darnétal,ORG,1
+Montérolier-Buchy,PER,1
+Clères,LOC,1
+Delivet !,MISC,1
+Sapristi,LOC,1
+là-bas,LOC,1
+Mme Delbois,PER,1
+Dorin,PER,1
+Cruelle,LOC,1
+Isle-Adam,LOC,1
+Enghien,LOC,1
+porte Bineau,LOC,1
+Buchy,LOC,1
+COLLIER,ORG,1
+REINE,ORG,1
+d'Autriche,LOC,1
+Billingstone,PER,1
+comtesse de Dreux-Soubise,LOC,1
+Du Barry,PER,1
+Rohan-Soubise,PER,1
+reine de France,PER,1
+comtesse de la Motte,LOC,1
+Villette,LOC,1
+Motte,LOC,1
+Italie,LOC,1
+Gaston de Dreux-Soubise,PER,1
+Rohan-Guéménée,LOC,1
+Jefferys,PER,1
+Palais de Castille,LOC,1
+Christian,PER,1
+comte de Dreux,PER,1
+Madame de Dreux,PER,1
+Sommée,LOC,1
+Suresnes,LOC,1
+Péchard,LOC,1
+la France,LOC,1
+souleva,LOC,1
+M. de Dreux-Soubise,PER,1
+Essaville,LOC,1
+Bochas,LOC,1
+Sicile,LOC,1
+général marquis de Rouzières,PER,1
+M. de Rouzières,PER,1
+Sherlock Holmes,PER,1
+Complice,PER,1
+Provoquer,PER,1
+Avouez,PER,1
+Le Collier de la Reine,MISC,1
+SEPT,ORG,1
+CŒUR,LOC,1
+Cascade,LOC,1
+verrou,LOC,1
+Urgente,PER,1
+Mes doigts,MISC,1
+Saisir,MISC,1
+Sagesse,PER,1
+Allais-je,PER,1
+Supplice intolérable,MISC,1
+Spectacle incompréhensible !,MISC,1
+Bacchus,MISC,1
+Obsédé,ORG,1
+brun,PER,1
+rue de Berry,LOC,1
+mail-coach,PER,1
+- M. Andermatt,PER,1
+rue de,LOC,1
+Suisses,LOC,1
+rue de Provence,LOC,1
+Le Sept de cœur !,MISC,1
+Amirauté anglaise,LOC,1
+Lausanne,LOC,1
+H. Georges Andermatt,PER,1
+le Comptoir des Métaux,MISC,1
+hôtel Andermatt,LOC,1
+Que M. Andermatt,LOC,1
+Madame Andermatt,PER,1
+Russie,LOC,1
+Salvator !,MISC,1
+cailloux,LOC,1
+soyez,MISC,1
+Neuf heures,MISC,1
+Alfred,PER,1
+Lacombe,LOC,1
+Livide,PER,1
+Ahuri,LOC,1
+Oh !,MISC,1
+Mets-toi à ma place,MISC,1
+M. Durand,PER,1
+Dupont,LOC,1
+Imbécile,MISC,1
+serrure secrète,LOC,1
+Charlemagne,PER,1
+Mon Dieu !,MISC,1
+COFFRE,MISC,1
+MADAME IMBERT,PER,1
+Berthier,LOC,1
+Courcelles,LOC,1
+Porte-Maillot,LOC,1
+Villiers,LOC,1
+bras-le-corps,LOC,1
+Grande-Armée,LOC,1
+M. Imbert,PER,1
+place de l'Étoile,LOC,1
+Sur-le-champ,LOC,1
+Grouvel,PER,1
+objecta Lupin,PER,1
+Extérieure,LOC,1
+Minuit,MISC,1
+murmura Lupin,PER,1
+Suez,LOC,1
+Avais,MISC,1
+ÉTAIENT,ORG,1
+abasourdi,PER,1
+Savez,MISC,1
+André Brawford,PER,1
+Brawford !,MISC,1
+la leçon,MISC,1
+hein,PER,1
+NOIRE,MISC,1
+- Commençons,MISC,1
+Inutile,PER,1
+Mon brave Lupin,MISC,1
+Bois,LOC,1
+comte d'Andillot,PER,1
+Maisons,LOC,1
+la manche,LOC,1
+boulevard de Courcelles,LOC,1
+Sinclèves,LOC,1
+Anatole Dufour,PER,1
+Anatole,PER,1
+Cour d'assises,ORG,1
+pesez mes paroles,PER,1
+Outard,PER,1
+rue Oberkampf,LOC,1
+République,MISC,1
+rue Lepic,LOC,1
+Étoile,LOC,1
+parc Monceau,LOC,1
+Parle,MISC,1
+bah,LOC,1
+planta,ORG,1
+Londres,LOC,1
+Saint-Pétersbourg,LOC,1
+Calcutta,LOC,1
+Buenos-Ayres,LOC,1
+New York,LOC,1
+serrure,LOC,1
+Deviner,PER,1
+Victor Danègre !,PER,1
+HERLOCK,MISC,1
+ARRIVE TROP TARD,ORG,1
+Devanne !,MISC,1
+croyez-le,MISC,1
+tour Guillaume,LOC,1
+veulx,PER,1
+Montigny,LOC,1
+Gruchet,PER,1
+Crasville,PER,1
+Chronique de Thibermesnil,MISC,1
+T. G.,PER,1
+Tour Guillaume,PER,1
+Geoffroy,MISC,1
+Leribourg,PER,1
+Songez,PER,1
+Gélis,PER,1
+M. le curé,PER,1
+bataille d'Arques,MISC,1
+Louise de Tancarville,PER,1
+Normandie,LOC,1
+Edgard,PER,1
+au Louvre,LOC,1
+Gamain,PER,1
+Bibliothèque,LOC,1
+Voulez,LOC,1
+Mme d'Androl,PER,1
+Messieurs,PER,1
+Aubusson,LOC,1
+Gouthière,PER,1
+Fragonard,PER,1
+Nattier,LOC,1
+Houdon,PER,1
+Boulle,LOC,1
+Roquefort,LOC,1
+Transatlantique,LOC,1
+les bijoux,MISC,1
+fuyez,MISC,1
+Chronique du xvie,MISC,1
+Miss Underdown,ORG,1
+Halleux,LOC,1
+Arques,LOC,1
+M. Georges Devanne,PER,1
+Beauvel,PER,1
+Ça,MISC,1
+pont de la Provence,LOC,1
+Que je ne sois pas celui,MISC,1
+New-York,LOC,1
+taillis,LOC,1
+Maître,PER,1
+Mes meubles,MISC,1
+Commandez,PER,1
+Réfléchit,LOC,1
+Halte !,MISC,1
+H. Tourne-t-elle,PER,1
+H,PER,1
+Pouvez,PER,1
+lettre R ?,MISC,1
+Devanne dégringola,PER,1
+Seigneur,PER,1
+H tournoie,LOC,1
+Mlle de Tancarville,PER,1
+Devanne abasourdi,PER,1
+Traité des serrures,MISC,1
+Voyez,LOC,1
+M. Velmont,PER,1
+Édouard,PER,1
+Monsieur Devanne,MISC,1
+Creative Commons BY-SA,MISC,1
+licence GNU,MISC,1
+Wikisource,MISC,1
+http://fr.wikisource.org/wiki/Aide:Signaler_une_erreur,LOC,1
