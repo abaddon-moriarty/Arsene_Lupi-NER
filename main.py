@@ -23,17 +23,17 @@ def bibli(path):
     all_paths = [file for file in listdir(path) if isfile(join(path,file))]
     return all_paths
 
-
 models = ["fr_core_news_sm"] #, "fr_core_news_md", "fr_core_news_lg", "fr_dep_news_trf"]
 book_name = "Arsène_Lupin_gentleman-cambrioleur"
 path = ".\\books\\"
 
+
 # This loop will list all files in the dir books. right now all_paths is hardcoded as only one book.
 # To run this all comment out the lines below
 # all_paths = bibli(path)
-all_paths = (join(path,book_name))
+all_paths = [book_name + ".txt"]
 for book_name in all_paths:
-    with open(".\\books\\" + book_name , mode='r', encoding='utf-8') as file:
+    with open(join(path + book_name) , mode='r', encoding='utf-8') as file:
         file = preprocessing(file)
 
         for model in models:
@@ -48,10 +48,14 @@ for book_name in all_paths:
                 for line in file:   
                     doc = nlp(line)
                     for ent in doc.ents:
+                        # checks if the entity is already in our dictionnary
                         if ent.text not in entities.keys():
                             entities[ent.text] = {"label" :ent.label_, "occurence": 1}
                         else:
-                            entities[ent.text]["occurence"] = entities[ent.text]["occurence"] + 1
+                            if entities[ent.text]["label"] != ent.label_:
+                                entities[ent.text] = {"label" :ent.label_, "occurence": 1}
+                            else:
+                                entities[ent.text]["occurence"] = entities[ent.text]["occurence"] + 1
             
                 # This sorts the dictionnary by the key "occurence" of the nested dictionary
                 sorted_output = sorted(entities.items(), key=lambda x: x[1]["occurence"], reverse=True)
