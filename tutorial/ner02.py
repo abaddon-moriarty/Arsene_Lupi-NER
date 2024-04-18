@@ -6,14 +6,13 @@ def aliasRecognition(segments, result):
     total = 0
 
     for segment in segments:
-        if segment:
-            result.write(f"\t{segment}\n")
         words = segment.split()
         
         for word in words:
             i = words.index(word)
             if word in alias_extended:
                 print(f"Maybe found: {word}")
+                result.write(f"\t{segment}\n")
                 result.write(f"\nMaybe found: {word}\n")
 
                 # Only check if the following word is not also an alias, to avoid counting "Arsène" and "Arsène Lupin" as two entities. 
