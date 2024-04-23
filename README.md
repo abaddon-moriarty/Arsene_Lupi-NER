@@ -13,10 +13,20 @@ I saw in multiple books that the first letter of each chapter is on a different 
 V
 ers six heures du soir, ses opérations terminées, M. Filleul attendait, en compagnie de son greffier, M. Brédoux, la voiture qui devait le ramener à Dieppe. Il paraissait agité, nerveux. Par deux fois il demanda :"
 
+I ran into a bit of a problem with the built-in function list.index(variable), because it doesn't allow for duplicates. So when looping through the text I would
+
 
 ## Normalising the chapters
 
 Not every book is split by chapters with the word "Chapitre", sometimes it's roman numerals or simply the name of the chapter which you can find in the "Table des matières" at the beginning of the book.
+
+## removing paratext
+
+We are only interested in the text itself, maybe the chapter numbers and names, but the name of the book, links, references or other texts added by Wiki.
+Right now the lists consists of:
+- "↑", "⁂", and any "[x]" reference
+- everyline under "À propos de cette édition électronique" is also automatically removed. I checked every book, it only contains paratext added by wiki.
+
 
 # Tutorial Folder
 
