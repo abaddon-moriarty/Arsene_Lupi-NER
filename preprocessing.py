@@ -7,16 +7,14 @@ def remove_paratext(book, recap, bookname):
     remove = ["↑", "⁂", "* * *"]
     segments = []
 
-    # print("\nremoving paratext\n")
     end = book.find("À propos de cette édition électronique") # This removes the end paratext from Wiki
     beginning = book.find("TABLE DES MATIÈRES") # This removes the paratext found at the beginning. Still need to work on table of content though
 
-    if beginning:
+    if beginning > 0:
         recap[bookname]["paratext"] = [book[:beginning], book[end:]]
         book = book[beginning:end].split("\n\n")
     else:
         beginning = book.find("Exporté de Wikisource") # This removes the paratext found at the beginning. Still need to work on table of content though
-        print(book[:beginning])
         recap[bookname]["paratext"] = [book[end:]]
         book = book[:end].split("\n\n")
 
@@ -38,7 +36,7 @@ def remove_paratext(book, recap, bookname):
                 # print(segment)
                 segments.append(segment.strip())
 
-    return segments
+    return segments, recap
 
 def remove_letterine(segments, log):
 
@@ -74,7 +72,6 @@ while os.path.exists(f"C:\\Users\\munau\\OneDrive\\Desktop\\Machine_Learning\\Ar
     x = x + 1
 
 for bookname in tqdm(os.listdir(book_dir), desc="Processing Book"):
-
     norm_text = []
 
     norm_name = f"{root}input\\{bookname[:-4]}_norm{bookname[-4:]}"
