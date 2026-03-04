@@ -3,11 +3,14 @@ import csv
 import time
 from os import listdir
 from os.path import isfile, join
+
+import spacy
 from spacy.matcher import Matcher
-from os.path import isfile, join
-from os import listdir
+from tqdm import tqdm
 
 total_start_time = time.time()
+
+
 # This cleans out the text from character that might cause issues, right now only "\n", "\t", "—" and "’"
 # List to be updated throughout dev
 def preprocessing(file):
@@ -23,11 +26,31 @@ def preprocessing(file):
 
 
 # loop to go through all files in the input dir, so we can analyse each text with one command
-# def bibli(path):
-#     all_paths = [file for file in listdir(path) if isfile(join(path,file))]
-#     return all_paths
+def bibli(path):
+    all_paths = [file for file in listdir(path) if isfile(join(path, file))]
+    return all_paths
 
-models = ["fr_core_news_sm"] #, "fr_core_news_md", "fr_core_news_lg", "fr_dep_news_trf"]
+
+def loading_models(models):
+    # Pre-loading models so it's accessible for processing
+    for model in models.keys():
+        print(f"loading the model: {model}")
+        start_time = time.time()
+        models[model]["nlp"] = spacy.load(model)
+        models[model]["matcher"] = Matcher(models[model]["nlp"].vocab)
+        end_time = time.time()
+        print(f"Time to load the model: {model}", end_time - start_time)
+    return models
+
+
+models = {
+    "fr_core_news_sm": {"nlp": None, "matcher": None},
+    "fr_core_news_md": {"nlp": None, "matcher": None},
+    "fr_core_news_lg": {"nlp": None, "matcher": None},
+    "fr_dep_news_trf": {"nlp": None, "matcher": None},
+}
+
+models = loading_models(models)
 book_name = "Arsène_Lupin_gentleman-cambrioleur"
 path = ".\\input\\"
 
@@ -39,15 +62,49 @@ all_paths = [book_name + ".txt"]
 
 for book_name in tqdm(all_paths, unit=" book"):
     with open(join(path + book_name), mode="r", encoding="utf-8") as file:
-        file = preprocessing(file)
+        with open("LOC_sm.txt", mode="w", encoding="utf-8") as text:
+            file = preprocessing(file)
+            print("working on:", book_name)
+            for model in models.keys():
+                print("Using the model", model)
+                start_time = time.time()
+                nlp = models[model]["nlp"]
+                matcher = models[model]["matcher"]
+                end_time = time.time()
+                print(f"Time to load the model: {model}", end_time - start_time)
 
-        for model in models:
-            nlp = spacy.load(model)
-            
-            with open(".\\output\\" + book_name[:-4] + "_" + model + ".csv", mode = 'w', encoding= 'utf-8', newline='') as csvfile:
-                writer = csv.DictWriter(csvfile, fieldnames=['entity', 'label', 'occurence'])
-                writer.writeheader()
-                entities = {}
+                for f in tqdm(file):
+                    doc = nlp(f)
+
+                    # The pattern is tring to match any Entity type Location, that does not look like an url or an e-mail because I've had a few of those in first runs.
+                    pattern = [
+                        {"ENT_TYPE": "LOC"},
+                        {"LIKE_NUM": False},
+                        {"LIKE_URL": False},
+                        {"LIKE_EMAIL": False},
+                    ]
+                    matcher.add("LOC_PATTERN", [pattern])
+                    matches = matcher(doc)
+
+                    # print(len(matcher), "correspondances found.")
+                    for match_id, start, end in matches:
+                        deps = []
+                        # Obtiens le span en correspondance
+                        matched_span = doc[start:end]
+                        # print(matched_span.text)
+                        text.write(matched_span.text)
+                        for token in matched_span:
+                            deps.append(token.dep_)
+                        text.write(str(deps))
+                        text.write("\n")
+
+                        # matched_dep = matched_span.dep_
+                        # text.write("\n")
+
+                with open(".\\output\\" + book_name[:-4] + "_" + model + ".csv", mode="w", encoding="utf-8", newline="",) as csvfile:
+                        writer = csv.DictWriter(csvfile, fieldnames=["entity", "label", "occurence"])
+                        writer.writeheader()
+                        entities = {}
 
                     """The dict should look like this:
                     entities = {Herlock Sholmès:{
