@@ -1,5 +1,6 @@
 import os
 import re
+import time
 
 from tqdm import tqdm
 
@@ -78,35 +79,59 @@ def remove_letterine(segments, log):
     return segments, mods, no_match
 
 
+def improve_syntax(segments, log, problematic_tokens):
+    clean = []
+    clean_count = 0
+    for segment in tqdm(segments, desc="cleaning the text", unit=" line"):
+        for old, new in problematic_tokens:
+            if old in segment:
+                segment = segment.replace(old, new)
+                clean_count += 1
+
+        segment = segment.strip()
+        if segment:  # this will only append non empty lines
+            clean.append(segment)
+
+    if clean_count:
+        log.write(f"{clean_count} lines fixed, problematic tokens removed.\n")
+    else:
+        log.write("No problematic tokens found.\n")
+
+    return clean
+
+
 modifs = []
 recap = {}
 
 
 root = "/home/barachiel/Documents/LupiNer/Arsene_Lupi-NER/"
 book_dir = f"{root}books/"
+problematic_tokens = [("\t", ""), ("—", "-"), ("’", "'")]
 
-x = 1
-while os.path.exists(
-    f"/home/barachiel/Documents/LupiNer/Arsene_Lupi-NER/log/preprocessing_{x}.log"
-):
-    x = x + 1
+log = open(
+    f"{root}log/preprocessing_{time.strftime('%Y%m%d-%H%M%S')}.log",
+    "a",
+    encoding="utf-8",
+)
+
+log.write(f"Syntax correction includes: {problematic_tokens}\n")
 
 for bookname in tqdm(os.listdir(book_dir), desc="Processing Book"):
     norm_text = []
 
     norm_name = f"{root}input/{bookname[:-4]}_norm{bookname[-4:]}"
-    log = open(f"{root}log/preprocessing_{x}.log", "a", encoding="utf-8")
     f = open(os.path.join(book_dir, bookname), "r", encoding="utf-8")
     norm = open(
         f"{root}input/{bookname[:-4]}_norm{bookname[-4:]}", "w", encoding="utf-8"
     )
 
-    log.write(f"Pre-processing the book: {bookname}.\n")
+    log.write(f"\n\nPre-processing the book: {bookname}.\n")
     # print(f"Pre-processing the book: {bookname}.\n")
     recap[bookname] = {}
     book = f.read()
     segments, recap = remove_paratext(book, recap, bookname)
     segments, mods, no_match = remove_letterine(segments, log)
+    segments = improve_syntax(segments, log, problematic_tokens)
 
     for line in segments:
         norm.write(f"{line}\n")
@@ -119,6 +144,3 @@ for bookname in tqdm(os.listdir(book_dir), desc="Processing Book"):
         for match in no_match:
             log.write(str(match))
             log.write("\n")
-
-    for line in norm_text:
-        norm.write(f"{line}\n")

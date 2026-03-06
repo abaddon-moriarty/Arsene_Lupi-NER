@@ -10,27 +10,43 @@ from tqdm import tqdm
 total_start_time = time.time()
 
 
-# This cleans out the text from character that might cause issues, right now only "\n", "\t", "—" and "’"
-# List to be updated throughout dev
-def preprocessing(file):
-    clean = []
-    f = file.read().splitlines()
-    for line in tqdm(f, desc="cleaning the text", unit=" line"):
-        # for line in f:
-        line = line.strip().replace("\t", "").replace("—", "-").replace("’", "'")
-        if line:  # this will only append non empty lines
-            clean.append(line)
-
-    return clean
-
-
 # loop to go through all files in the input dir, so we can analyse each text with one command
 def get_all_files(path):
+    """
+    Retrieve all files in a given directory.
+
+    Args:
+        path (str): The directory path to search for files.
+
+    Returns:
+        list: A list of filenames (strings) in the specified directory.
+
+    Example:
+        >>> get_all_files('/home/user/documents')
+        ['file1.txt', 'file2.pdf', 'file3.py']
+    """
     all_paths = [file for file in listdir(path) if isfile(join(path, file))]
     return all_paths
 
 
 def loading_models(models):
+    """
+    Load and initialize spaCy NLP models with matchers.
+    This function pre-loads spaCy models and creates Matcher objects for each model,
+    making them accessible for subsequent NER processing. It measures and prints the
+    loading time for each model.
+    Args:
+        models (dict): A dictionary where keys are model names (str) and values are
+                       dictionaries that will be updated with 'nlp' and 'matcher' keys.
+    Returns:
+        dict: The input models dictionary updated with 'nlp' (spaCy Language object)
+              and 'matcher' (Matcher object) for each model.
+    Raises:
+        OSError: If a spaCy model cannot be found or loaded.
+    Example:
+        >>> models = {'en_core_web_sm': {}, 'en_core_web_md': {}}
+        >>> loaded_models = loading_models(models)
+    """
     # Pre-loading models so it's accessible for processing
     for model in models:
         print(f"loading the model: {model}")
@@ -39,7 +55,9 @@ def loading_models(models):
         models[model]["matcher"] = Matcher(models[model]["nlp"].vocab)
         end_time = time.time()
         print(f"Time to load the model: {model}, {end_time - start_time:.2f}s")
+
     return models
+
 
 def main():
     models = {
@@ -49,17 +67,16 @@ def main():
         # "fr_dep_news_trf": {"nlp": None, "matcher": None},
     }
 
+    models = loading_models(models)
+    # book_name = "Arsène_Lupin_gentleman-cambrioleur_norm"
+    path = "./input/"
+
     loc_pattern = [
         {"ENT_TYPE": "LOC"},
         {"LIKE_NUM": False},
         {"LIKE_URL": False},
         {"LIKE_EMAIL": False},
     ]
-    
-    models = loading_models(models)
-    # book_name = "Arsène_Lupin_gentleman-cambrioleur_norm"
-    path = "./input/"
-
 
     # This loop will list all files in the dir books. right now all_paths is hardcoded as only one book.
     # To run this all comment out the lines below
@@ -69,8 +86,7 @@ def main():
     with open("LOC_sm.txt", mode="w", encoding="utf-8") as text:
         for book_name in tqdm(all_paths, unit=" book"):
             with open(join(path, book_name), mode="r", encoding="utf-8") as book:
-            
-                file = preprocessing(book)
+                file = book.read().splitlines()
                 print("working on:", book_name)
                 for model in models.keys():
                     print("Using the model", model)
@@ -123,7 +139,6 @@ def main():
                         # entities = {Herlock Sholmès:{
                         #                             'PER': 32,
                         #                             'LOC': 4,}
-                        
 
                         # loops through all lines adding the entities in a dictionnary
                         for line in tqdm(file, unit=" line"):
@@ -184,5 +199,5 @@ def main():
     print(f"Total run time: {overall_end_time - total_start_time:.2f}s")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
