@@ -1,4 +1,3 @@
-import spacy
 import csv
 import time
 from os import listdir
@@ -47,12 +46,12 @@ models = {
     "fr_core_news_sm": {"nlp": None, "matcher": None},
     "fr_core_news_md": {"nlp": None, "matcher": None},
     "fr_core_news_lg": {"nlp": None, "matcher": None},
-    "fr_dep_news_trf": {"nlp": None, "matcher": None},
+    # "fr_dep_news_trf": {"nlp": None, "matcher": None},
 }
 
 models = loading_models(models)
-book_name = "Arsène_Lupin_gentleman-cambrioleur"
-path = ".\\input\\"
+book_name = "Arsène_Lupin_gentleman-cambrioleur_norm"
+path = "./input/"
 
 
 # This loop will list all files in the dir books. right now all_paths is hardcoded as only one book.
@@ -101,16 +100,21 @@ for book_name in tqdm(all_paths, unit=" book"):
                         # matched_dep = matched_span.dep_
                         # text.write("\n")
 
-                with open(".\\output\\" + book_name[:-4] + "_" + model + ".csv", mode="w", encoding="utf-8", newline="",) as csvfile:
-                        writer = csv.DictWriter(csvfile, fieldnames=["entity", "label", "occurence"])
-                        writer.writeheader()
-                        entities = {}
-
+                with open(
+                    "./output/" + book_name[:-4] + "_" + model + ".csv",
+                    mode="w",
+                    encoding="utf-8",
+                    newline="",
+                ) as csvfile:
+                    writer = csv.DictWriter(
+                        csvfile, fieldnames=["entity", "label", "occurence"]
+                    )
+                    writer.writeheader()
+                    entities = {}
                     """The dict should look like this:
                     entities = {Herlock Sholmès:{
                                                 'PER': 32,
                                                 'LOC': 4,}
-
                     """
 
                     # loops through all lines adding the entities in a dictionnary
@@ -162,13 +166,13 @@ for book_name in tqdm(all_paths, unit=" book"):
 
                     csvfile.close()
 
-                print(
-                    "\nThe model",
-                    model,
-                    "found",
-                    len(sorted_output),
-                    "different entities",
-                )
+                    print(
+                        "\nThe model",
+                        model,
+                        "found",
+                        len(sorted_output),
+                        "different entities",
+                    )
 
 total_end_time = time.time()
 
