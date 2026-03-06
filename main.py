@@ -131,9 +131,9 @@ def main():
                         if ent.text not in entities:
                             entities[ent.text] = {ent.label_: 1, "total": 1}
                         else:
-                            # checks if the label linked to the entity is the same if it is just add 1 occurence,
+                            # checks if the label linked to the entity is the same if it is just add 1 occurrence,
                             # if not adds a new key, value pair.
-                            # also counting total number of occurence so it's easier to sort out later.
+                            # also counting total number of occurrence so it's easier to sort out later.
                             if ent.label_ not in entities[ent.text]:
                                 entities[ent.text][ent.label_] = 1
                                 entities[ent.text]["total"] += 1
@@ -143,7 +143,7 @@ def main():
 
             if result:
                 match_filename = (
-                    f"./output/{splitext(book_name)[0]}_{model}_matches.txt"
+                    f"./output/matches/{splitext(book_name)[0]}_{model}_matches.txt"
                 )
                 with open(match_filename, "w", encoding="utf-8") as mf:
                     mf.writelines(result)
@@ -160,7 +160,7 @@ def main():
                 )
                 # prints out in csv file
                 for key, value in sorted_output:
-                    # write one row for the total amount of occurences
+                    # write one row for the total amount of occurrences
                     writer.writerow(
                         {
                             "entity": key,
@@ -173,7 +173,7 @@ def main():
                     for k, val in value.items():
                         if k != "total":
                             # label = [k for k in value.keys() if k != "total"]
-                            # occurence = [(k, val) for k, val in value.items() if k != "total"]
+                            # occurrence = [(k, val) for k, val in value.items() if k != "total"]
                             writer.writerow(
                                 {"entity": key, "label": k, "occurrence": val}
                             )
