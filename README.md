@@ -15,7 +15,6 @@ ers six heures du soir, ses opérations terminées, M. Filleul attendait, en com
 
 I ran into a bit of a problem with the built-in function list.index(variable), because it doesn't allow for duplicates. So when looping through the text I would
 
-
 ## Normalising the chapters
 
 Not every book is split by chapters with the word "Chapitre", sometimes it's roman numerals or simply the name of the chapter which you can find in the "Table des matières" at the beginning of the book.
@@ -49,8 +48,24 @@ I am using the beautiful soup code that he showed, because I've never used that 
 First of all, "Arsène Lupin" was not in the list of aliases, so I manually added that. The approach used in the video is to get a list of titles that could be associated with any of the names and automatically add it to each one even if it doesn't make sense in the story, which I understand but... yeah. 
 
 
+# Installation
+To use spacy you need to download all 3/4 models beforehand. You can do it by running the following commands
+
+```python
+
+python -m spacy download fr_core_news_sm
+python -m spacy download fr_core_news_md
+python -m spacy download fr_core_news_lg
+python -m spacy download fr_dep_news_trf
+```
 
 # Libraries Used
  
  - SpaCy
  - Beautiful Soup
+
+
+# Errors
+
+- [ ] "I" & "II" found by NER on first book. Need to improve cleaning.
+- [ ] "Tiens" and "sauta" found as LOC too. "Tiens" starts with an uppercase so it's understandable, but "sauta" I really don't know.
